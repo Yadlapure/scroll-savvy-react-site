@@ -1,6 +1,33 @@
 
 import React, { useState, useEffect } from 'react';
-import { MessageCircle, Menu, X, ArrowRight, Users, TrendingUp, Shield, Star, CheckCircle, Phone, Mail, MapPin } from 'lucide-react';
+import { 
+  FaWhatsapp, 
+  FaBars, 
+  FaTimes, 
+  FaArrowRight, 
+  FaUsers, 
+  FaTrendingUp, 
+  FaShieldAlt, 
+  FaStar, 
+  FaCheckCircle, 
+  FaPhone, 
+  FaEnvelope, 
+  FaMapMarkerAlt,
+  FaLaptop,
+  FaMobile,
+  FaShoppingCart,
+  FaBox,
+  FaIndustry,
+  FaCog,
+  FaLeaf,
+  FaCar,
+  FaHeart,
+  FaThumbsUp,
+  FaAward,
+  FaGlobe,
+  FaRocket,
+  FaHandshake
+} from 'react-icons/fa';
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,23 +64,23 @@ const Index = () => {
       }`}>
         <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-lg">B</span>
+            <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">S</span>
             </div>
-            <span className="text-2xl font-bold text-gray-800">BizMarket</span>
+            <span className="text-2xl font-bold text-gray-800">Shudh</span>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Home</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Products</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Services</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">About</a>
-            <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Contact</a>
+            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Home</a>
+            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Products</a>
+            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Services</a>
+            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">About</a>
+            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Contact</a>
           </nav>
 
           {/* Login Button */}
-          <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
             Login
           </button>
 
@@ -62,7 +89,7 @@ const Index = () => {
             onClick={toggleMobileMenu}
             className="md:hidden p-2"
           >
-            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
 
@@ -70,62 +97,62 @@ const Index = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white border-t shadow-lg">
             <nav className="flex flex-col space-y-4 p-4">
-              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Home</a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Products</a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Services</a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">About</a>
-              <a href="#" className="text-gray-600 hover:text-blue-600 transition-colors font-medium">Contact</a>
+              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Home</a>
+              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Products</a>
+              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Services</a>
+              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">About</a>
+              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Contact</a>
             </nav>
           </div>
         )}
       </header>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-blue-50 via-white to-purple-50">
+      <section className="pt-24 pb-16 bg-gradient-to-br from-green-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
               <div className="space-y-4">
                 <h1 className="text-4xl md:text-6xl font-bold text-gray-800 leading-tight">
-                  Connect. Trade.{' '}
-                  <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                    Grow.
+                  Pure. Fresh.{' '}
+                  <span className="bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+                    Shudh.
                   </span>
                 </h1>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  India's largest B2B marketplace connecting businesses across the country. 
-                  Discover products, find suppliers, and grow your business with us.
+                  India's premier B2B marketplace for pure and authentic products. 
+                  Connect with verified suppliers and grow your business with quality assurance.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
+                <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center space-x-2">
                   <span>Get Started</span>
-                  <ArrowRight size={20} />
+                  <FaArrowRight size={20} />
                 </button>
-                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition-all duration-300">
+                <button className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-lg font-semibold hover:border-green-600 hover:text-green-600 transition-all duration-300">
                   Learn More
                 </button>
               </div>
 
               <div className="flex items-center space-x-8 text-sm text-gray-600">
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="text-green-500" size={16} />
+                  <FaCheckCircle className="text-green-500" size={16} />
                   <span>Verified Suppliers</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="text-green-500" size={16} />
-                  <span>Secure Payments</span>
+                  <FaCheckCircle className="text-green-500" size={16} />
+                  <span>Quality Assured</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <CheckCircle className="text-green-500" size={16} />
+                  <FaCheckCircle className="text-green-500" size={16} />
                   <span>Fast Delivery</span>
                 </div>
               </div>
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-blue-100 to-purple-100 rounded-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
+              <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-8 transform rotate-3 hover:rotate-0 transition-transform duration-500">
                 <img 
                   src="/placeholder.svg" 
                   alt="B2B Business" 
@@ -135,7 +162,7 @@ const Index = () => {
               <div className="absolute -bottom-4 -left-4 bg-white p-4 rounded-xl shadow-lg">
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                  <span className="text-sm font-semibold text-gray-700">1M+ Active Businesses</span>
+                  <span className="text-sm font-semibold text-gray-700">2M+ Active Businesses</span>
                 </div>
               </div>
             </div>
@@ -148,13 +175,13 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
-              { number: '1M+', label: 'Active Buyers', icon: Users },
-              { number: '500K+', label: 'Suppliers', icon: TrendingUp },
-              { number: '10M+', label: 'Products', icon: Shield },
-              { number: '4.8', label: 'Rating', icon: Star }
+              { number: '2M+', label: 'Active Buyers', icon: FaUsers },
+              { number: '800K+', label: 'Suppliers', icon: FaTrendingUp },
+              { number: '15M+', label: 'Products', icon: FaShieldAlt },
+              { number: '4.9', label: 'Rating', icon: FaStar }
             ].map((stat, index) => (
               <div key={index} className="text-center space-y-3 p-6 rounded-xl hover:bg-gray-50 transition-colors">
-                <stat.icon className="mx-auto text-blue-600" size={32} />
+                <stat.icon className="mx-auto text-green-600" size={32} />
                 <div className="text-3xl font-bold text-gray-800">{stat.number}</div>
                 <div className="text-gray-600 font-medium">{stat.label}</div>
               </div>
@@ -167,30 +194,30 @@ const Index = () => {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Choose BizMarket?</h2>
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Why Choose Shudh?</h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We provide everything you need to grow your business in the digital marketplace
+              We provide everything you need to grow your business with pure and authentic products
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                title: 'Verified Suppliers',
-                description: 'All our suppliers are thoroughly verified to ensure quality and reliability',
-                icon: Shield,
-                color: 'blue'
+                title: 'Quality Assured',
+                description: 'All our products go through rigorous quality checks to ensure purity and authenticity',
+                icon: FaShieldAlt,
+                color: 'green'
               },
               {
                 title: 'Competitive Pricing',
                 description: 'Get the best prices with our transparent pricing system and bulk discounts',
-                icon: TrendingUp,
-                color: 'green'
+                icon: FaTrendingUp,
+                color: 'blue'
               },
               {
                 title: 'Secure Transactions',
                 description: 'Your payments are protected with our secure payment gateway and escrow service',
-                icon: CheckCircle,
+                icon: FaCheckCircle,
                 color: 'purple'
               }
             ].map((feature, index) => (
@@ -211,19 +238,54 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Popular Categories</h2>
-            <p className="text-xl text-gray-600">Explore thousands of products across various industries</p>
+            <p className="text-xl text-gray-600">Explore thousands of pure products across various industries</p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
-              'Electronics', 'Textiles', 'Agriculture', 'Machinery',
-              'Chemicals', 'Automotive', 'Healthcare', 'Construction'
+              { name: 'Electronics', icon: FaLaptop },
+              { name: 'Textiles', icon: FaHeart },
+              { name: 'Agriculture', icon: FaLeaf },
+              { name: 'Machinery', icon: FaCog },
+              { name: 'Automotive', icon: FaCar },
+              { name: 'Healthcare', icon: FaShieldAlt },
+              { name: 'Food & Beverages', icon: FaHeart },
+              { name: 'Construction', icon: FaIndustry }
             ].map((category, index) => (
-              <div key={index} className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300 cursor-pointer group">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white font-bold text-lg">{category[0]}</span>
+              <div key={index} className="bg-gradient-to-br from-green-50 to-blue-50 p-6 rounded-xl text-center hover:shadow-lg transition-shadow duration-300 cursor-pointer group">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg mx-auto mb-4 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <category.icon className="text-white" size={24} />
                 </div>
-                <h3 className="font-semibold text-gray-800">{category}</h3>
+                <h3 className="font-semibold text-gray-800">{category.name}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* New Services Section */}
+      <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-white mb-4">Our Services</h2>
+            <p className="text-xl text-green-100 max-w-2xl mx-auto">
+              Comprehensive solutions for all your business needs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { title: 'Bulk Orders', icon: FaBox, description: 'Large quantity orders with special pricing' },
+              { title: 'Quick Delivery', icon: FaRocket, description: 'Fast and reliable delivery nationwide' },
+              { title: 'Quality Control', icon: FaAward, description: 'Rigorous quality checks on all products' },
+              { title: 'Customer Support', icon: FaHandshake, description: '24/7 dedicated customer support' }
+            ].map((service, index) => (
+              <div key={index} className="text-center text-white">
+                <div className="w-16 h-16 bg-white/20 rounded-lg mx-auto mb-4 flex items-center justify-center">
+                  <service.icon size={32} />
+                </div>
+                <h3 className="text-lg font-semibold mb-2">{service.title}</h3>
+                <p className="text-green-100 text-sm">{service.description}</p>
               </div>
             ))}
           </div>
@@ -243,29 +305,29 @@ const Index = () => {
               {
                 name: 'Rajesh Kumar',
                 company: 'Kumar Electronics',
-                feedback: 'BizMarket has transformed our business. We found reliable suppliers and increased our profit margins significantly.',
+                feedback: 'Shudh has transformed our business. We found reliable suppliers with genuine products and increased our profit margins significantly.',
                 rating: 5
               },
               {
                 name: 'Priya Sharma',
-                company: 'Sharma Textiles',
-                feedback: 'The platform is user-friendly and the customer support is excellent. Highly recommended for B2B trading.',
+                company: 'Sharma Organics',
+                feedback: 'The platform is user-friendly and the quality assurance is excellent. Highly recommended for authentic products.',
                 rating: 5
               },
               {
                 name: 'Amit Patel',
                 company: 'Patel Industries',
-                feedback: 'Great variety of products and competitive prices. BizMarket is our go-to platform for all business needs.',
-                rating: 4
+                feedback: 'Great variety of pure products and competitive prices. Shudh is our go-to platform for all business needs.',
+                rating: 5
               }
             ].map((testimonial, index) => (
               <div key={index} className="bg-white p-8 rounded-xl shadow-lg">
                 <div className="flex mb-4">
                   {[...Array(5)].map((_, i) => (
-                    <Star 
+                    <FaStar 
                       key={i} 
                       size={16} 
-                      className={i < testimonial.rating ? 'text-yellow-400 fill-current' : 'text-gray-300'} 
+                      className={i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'} 
                     />
                   ))}
                 </div>
@@ -280,14 +342,50 @@ const Index = () => {
         </div>
       </section>
 
+      {/* New About Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">About Shudh</h2>
+              <p className="text-lg text-gray-600 mb-6">
+                Shudh is India's leading B2B marketplace dedicated to providing pure, authentic, and quality products. 
+                We bridge the gap between buyers and sellers, ensuring transparency and trust in every transaction.
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3">
+                  <FaGlobe className="text-green-600" size={20} />
+                  <span className="text-gray-700">Pan-India presence with 500+ cities coverage</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <FaShieldAlt className="text-green-600" size={20} />
+                  <span className="text-gray-700">100% verified suppliers with quality guarantee</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <FaRocket className="text-green-600" size={20} />
+                  <span className="text-gray-700">Fast delivery and excellent customer service</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <img 
+                src="/placeholder.svg" 
+                alt="About Shudh" 
+                className="w-full h-80 object-cover rounded-xl shadow-lg"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl font-bold text-white mb-4">Ready to Grow Your Business?</h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join millions of businesses already using BizMarket to find suppliers, customers, and grow their revenue.
+          <h2 className="text-4xl font-bold text-white mb-4">Ready to Experience Pure Business?</h2>
+          <p className="text-xl text-green-100 mb-8 max-w-2xl mx-auto">
+            Join millions of businesses already using Shudh to find authentic suppliers, quality products, and grow their revenue.
           </p>
-          <button className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105 shadow-lg">
+          <button className="bg-white text-green-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105 shadow-lg">
             Start Your Journey Today
           </button>
         </div>
@@ -299,23 +397,23 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-8">
             <div>
               <div className="flex items-center space-x-2 mb-6">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">B</span>
+                <div className="w-8 h-8 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center">
+                  <span className="text-white font-bold text-lg">S</span>
                 </div>
-                <span className="text-2xl font-bold">BizMarket</span>
+                <span className="text-2xl font-bold">Shudh</span>
               </div>
               <p className="text-gray-400 mb-6">
-                India's leading B2B marketplace connecting businesses nationwide.
+                India's leading B2B marketplace for pure and authentic products.
               </p>
               <div className="flex space-x-4">
                 <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                  <Phone size={16} />
+                  <FaPhone size={16} />
                 </div>
                 <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                  <Mail size={16} />
+                  <FaEnvelope size={16} />
                 </div>
                 <div className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 transition-colors cursor-pointer">
-                  <MapPin size={16} />
+                  <FaMapMarkerAlt size={16} />
                 </div>
               </div>
             </div>
@@ -327,7 +425,7 @@ const Index = () => {
               },
               {
                 title: 'Services',
-                links: ['Buy Products', 'Sell Products', 'Trade Assurance', 'Logistics', 'Finance']
+                links: ['Buy Products', 'Sell Products', 'Quality Assurance', 'Logistics', 'Finance']
               },
               {
                 title: 'Support',
@@ -348,21 +446,22 @@ const Index = () => {
           </div>
 
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 BizMarket. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>&copy; 2024 Shudh. All rights reserved. | Privacy Policy | Terms of Service</p>
           </div>
         </div>
       </footer>
 
-      {/* WhatsApp Floating Button */}
+      {/* WhatsApp Floating Button with Text */}
       {showWhatsApp && (
         <div className="fixed bottom-6 right-6 z-50">
-          <button
-            onClick={handleWhatsAppClick}
-            className="bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 animate-bounce"
-            style={{ animationDuration: '2s' }}
-          >
-            <MessageCircle size={24} />
-          </button>
+          <div className="bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 animate-bounce cursor-pointer"
+               style={{ animationDuration: '2s' }}
+               onClick={handleWhatsAppClick}>
+            <div className="flex items-center space-x-3 px-4 py-3">
+              <FaWhatsapp size={24} />
+              <span className="font-medium text-sm whitespace-nowrap">Want to chat?</span>
+            </div>
+          </div>
         </div>
       )}
     </div>
