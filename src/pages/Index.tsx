@@ -6,7 +6,7 @@ import {
   FaTimes, 
   FaArrowRight, 
   FaUsers, 
-  FaTrendingUp, 
+  FaChartLine, 
   FaShieldAlt, 
   FaStar, 
   FaCheckCircle, 
@@ -176,7 +176,7 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {[
               { number: '2M+', label: 'Active Buyers', icon: FaUsers },
-              { number: '800K+', label: 'Suppliers', icon: FaTrendingUp },
+              { number: '800K+', label: 'Suppliers', icon: FaChartLine },
               { number: '15M+', label: 'Products', icon: FaShieldAlt },
               { number: '4.9', label: 'Rating', icon: FaStar }
             ].map((stat, index) => (
@@ -211,7 +211,7 @@ const Index = () => {
               {
                 title: 'Competitive Pricing',
                 description: 'Get the best prices with our transparent pricing system and bulk discounts',
-                icon: FaTrendingUp,
+                icon: FaChartLine,
                 color: 'blue'
               },
               {
