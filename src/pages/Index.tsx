@@ -262,6 +262,118 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Mobile App Section */}
+      <section className="py-16 bg-gradient-to-br from-blue-50 via-white to-green-50">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-4xl font-bold text-gray-800">
+                  Order Anywhere, Anytime with the Shudh App
+                </h2>
+                <p className="text-xl text-gray-600">
+                  Experience the power of pure business at your fingertips
+                </p>
+              </div>
+
+              <div className="space-y-6">
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaMobile className="text-white" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Exclusive Mobile-Only Deals</h3>
+                    <p className="text-gray-600">Access special discounts and flash sales available only on our mobile app</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaRocket className="text-white" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Smart App for Smart Buyer</h3>
+                    <p className="text-gray-600">Shop over lakhs of products, set repeat orders, track deliveries, and manage credit — all from your phone.</p>
+                  </div>
+                </div>
+
+                <div className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-gradient-to-r from-green-600 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <FaShieldAlt className="text-white" size={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">Secure Payment Gateway</h3>
+                    <p className="text-gray-600">Multiple payment options with bank-grade security and instant confirmations</p>
+                  </div>
+                </div>
+              </div>
+
+              <button className="bg-gradient-to-r from-green-600 to-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:from-green-700 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Download Shudh Now
+              </button>
+            </div>
+
+            <div className="relative">
+              <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-2xl p-8">
+                <img 
+                  src="/lovable-uploads/2f466a80-acad-41f7-82b7-bd647f6325b9.png" 
+                  alt="Shudh Mobile App" 
+                  className="w-full h-80 object-contain rounded-xl"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Get Started Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Get Started in Under 10 Minutes</h2>
+            <p className="text-xl text-gray-600">Simple steps to join India's largest B2B marketplace</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            <div className="text-center space-y-6 p-8 bg-blue-50 rounded-2xl">
+              <div className="w-20 h-20 bg-blue-500 rounded-full flex items-center justify-center mx-auto">
+                <span className="text-white text-2xl font-bold">1</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Quick Sign-Up</h3>
+                <p className="text-gray-600">Sign up with your mobile number, business name and pin code</p>
+              </div>
+            </div>
+
+            <div className="text-center space-y-6 p-8 bg-green-50 rounded-2xl">
+              <div className="w-20 h-20 bg-green-500 rounded-full flex items-center justify-center mx-auto">
+                <span className="text-white text-2xl font-bold">2</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Instant Verification</h3>
+                <p className="text-gray-600">Upload GSTIN or Shop License for instant KYC approval</p>
+              </div>
+            </div>
+
+            <div className="text-center space-y-6 p-8 bg-orange-50 rounded-2xl">
+              <div className="w-20 h-20 bg-orange-500 rounded-full flex items-center justify-center mx-auto">
+                <span className="text-white text-2xl font-bold">3</span>
+              </div>
+              <div>
+                <h3 className="text-xl font-bold text-gray-800 mb-3">Order & Grow</h3>
+                <p className="text-gray-600">Access & enjoy competitive prices, credit, and fast delivery — right from the app</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
+            <button className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors duration-300 transform hover:scale-105 shadow-lg">
+              Register Today!
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* New Services Section */}
       <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600">
         <div className="container mx-auto px-4">
