@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   FaWhatsapp, 
@@ -31,14 +30,14 @@ import {
 
 const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [showWhatsApp, setShowWhatsApp] = useState(false);
+  const [showWhatsAppText, setShowWhatsAppText] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       setIsScrolled(scrollPosition > 50);
-      setShowWhatsApp(scrollPosition > 300);
+      setShowWhatsAppText(scrollPosition < 300);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -292,56 +291,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">What Our Customers Say</h2>
-            <p className="text-xl text-gray-600">Join thousands of satisfied businesses</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                name: 'Rajesh Kumar',
-                company: 'Kumar Electronics',
-                feedback: 'Shudh has transformed our business. We found reliable suppliers with genuine products and increased our profit margins significantly.',
-                rating: 5
-              },
-              {
-                name: 'Priya Sharma',
-                company: 'Sharma Organics',
-                feedback: 'The platform is user-friendly and the quality assurance is excellent. Highly recommended for authentic products.',
-                rating: 5
-              },
-              {
-                name: 'Amit Patel',
-                company: 'Patel Industries',
-                feedback: 'Great variety of pure products and competitive prices. Shudh is our go-to platform for all business needs.',
-                rating: 5
-              }
-            ].map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg">
-                <div className="flex mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <FaStar 
-                      key={i} 
-                      size={16} 
-                      className={i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'} 
-                    />
-                  ))}
-                </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.feedback}"</p>
-                <div>
-                  <div className="font-semibold text-gray-800">{testimonial.name}</div>
-                  <div className="text-sm text-gray-500">{testimonial.company}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* New About Section */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4">
@@ -452,18 +401,18 @@ const Index = () => {
       </footer>
 
       {/* WhatsApp Floating Button with Text */}
-      {showWhatsApp && (
-        <div className="fixed bottom-6 right-6 z-50">
-          <div className="bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 animate-bounce cursor-pointer"
-               style={{ animationDuration: '2s' }}
-               onClick={handleWhatsAppClick}>
-            <div className="flex items-center space-x-3 px-4 py-3">
-              <FaWhatsapp size={24} />
+      <div className="fixed bottom-6 right-6 z-50">
+        <div className="bg-green-500 hover:bg-green-600 text-white rounded-full shadow-2xl transition-all duration-300 transform hover:scale-105 animate-bounce cursor-pointer"
+             style={{ animationDuration: '2s' }}
+             onClick={handleWhatsAppClick}>
+          <div className="flex items-center space-x-3 px-4 py-3">
+            <FaWhatsapp size={24} />
+            {showWhatsAppText && (
               <span className="font-medium text-sm whitespace-nowrap">Want to chat?</span>
-            </div>
+            )}
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
