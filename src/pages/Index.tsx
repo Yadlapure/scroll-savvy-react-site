@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   FaWhatsapp, 
   FaBars, 
@@ -33,6 +33,8 @@ const Index = () => {
   const [showWhatsAppText, setShowWhatsAppText] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
+  const videoScrollRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,6 +46,34 @@ const Index = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Video carousel scroll tracking
+  useEffect(() => {
+    const scrollContainer = videoScrollRef.current;
+    if (!scrollContainer) return;
+
+    const handleVideoScroll = () => {
+      const scrollLeft = scrollContainer.scrollLeft;
+      const cardWidth = 320 + 24; // card width + gap
+      const index = Math.round(scrollLeft / cardWidth);
+      setCurrentVideoIndex(Math.min(index, 3)); // Max 4 dots (0-3)
+    };
+
+    scrollContainer.addEventListener('scroll', handleVideoScroll);
+    return () => scrollContainer.removeEventListener('scroll', handleVideoScroll);
+  }, []);
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const offsetTop = element.offsetTop - 80; // Account for fixed header
+      window.scrollTo({
+        top: offsetTop,
+        behavior: 'smooth'
+      });
+    }
+    setIsMobileMenuOpen(false); // Close mobile menu after navigation
+  };
 
   const handleWhatsAppClick = () => {
     const phoneNumber = '+911234567890';
@@ -131,11 +161,11 @@ const Index = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Home</a>
-            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Products</a>
-            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Services</a>
-            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">About</a>
-            <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Contact</a>
+            <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-green-600 transition-colors font-medium">Home</button>
+            <button onClick={() => scrollToSection('products')} className="text-gray-600 hover:text-green-600 transition-colors font-medium">Products</button>
+            <button onClick={() => scrollToSection('services')} className="text-gray-600 hover:text-green-600 transition-colors font-medium">Services</button>
+            <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-green-600 transition-colors font-medium">About</button>
+            <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-green-600 transition-colors font-medium">Contact</button>
           </nav>
 
           {/* Login Button */}
@@ -156,11 +186,11 @@ const Index = () => {
         {isMobileMenuOpen && (
           <div className="md:hidden bg-white border-t shadow-lg">
             <nav className="flex flex-col space-y-4 p-4">
-              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Home</a>
-              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Products</a>
-              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Services</a>
-              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">About</a>
-              <a href="#" className="text-gray-600 hover:text-green-600 transition-colors font-medium">Contact</a>
+              <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-green-600 transition-colors font-medium text-left">Home</button>
+              <button onClick={() => scrollToSection('products')} className="text-gray-600 hover:text-green-600 transition-colors font-medium text-left">Products</button>
+              <button onClick={() => scrollToSection('services')} className="text-gray-600 hover:text-green-600 transition-colors font-medium text-left">Services</button>
+              <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-green-600 transition-colors font-medium text-left">About</button>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-green-600 transition-colors font-medium text-left">Contact</button>
             </nav>
           </div>
         )}
@@ -181,7 +211,7 @@ const Index = () => {
 
           {/* Video Carousel */}
           <div className="relative">
-            <div className="overflow-x-auto scrollbar-hide">
+            <div ref={videoScrollRef} className="overflow-x-auto scrollbar-hide">
               <div className="flex space-x-6 pb-4" style={{ width: 'max-content' }}>
                 {videos.map((video, index) => (
                   <div 
@@ -226,8 +256,8 @@ const Index = () => {
               {[0, 1, 2, 3].map((index) => (
                 <div
                   key={index}
-                  className={`w-2 h-2 rounded-full ${
-                    index === 0 ? 'bg-blue-600' : 'bg-gray-300'
+                  className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                    index === currentVideoIndex ? 'bg-blue-600' : 'bg-gray-300'
                   }`}
                 />
               ))}
@@ -326,7 +356,7 @@ const Index = () => {
       </section>
 
       {/* Hero Section */}
-      <section className="pt-24 pb-16 bg-gradient-to-br from-green-50 via-white to-blue-50">
+      <section id="home" className="pt-24 pb-16 bg-gradient-to-br from-green-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-8">
@@ -452,7 +482,7 @@ const Index = () => {
       </section>
 
       {/* Product Categories */}
-      <section className="py-16 bg-white">
+      <section id="products" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">Popular Categories</h2>
@@ -594,7 +624,7 @@ const Index = () => {
       </section>
 
       {/* New Services Section */}
-      <section className="py-16 bg-gradient-to-r from-green-600 to-blue-600">
+      <section id="services" className="py-16 bg-gradient-to-r from-green-600 to-blue-600">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">Our Services</h2>
@@ -623,7 +653,7 @@ const Index = () => {
       </section>
 
       {/* New About Section */}
-      <section className="py-16 bg-white">
+      <section id="about" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -672,7 +702,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16">
+      <footer id="contact" className="bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
