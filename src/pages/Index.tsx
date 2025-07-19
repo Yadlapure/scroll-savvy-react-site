@@ -32,6 +32,7 @@ const Index = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [showWhatsAppText, setShowWhatsAppText] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,6 +55,65 @@ const Index = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+
+  const openVideoModal = (video) => {
+    setSelectedVideo(video);
+  };
+
+  const closeVideoModal = () => {
+    setSelectedVideo(null);
+  };
+
+  const videos = [
+    {
+      id: 1,
+      title: "How Potato Traders Scaled to National Wholesale",
+      description: "Learn how local potato traders expanded their customer base and achieved national reach using Shudh's marketplace...",
+      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      category: "Agriculture"
+    },
+    {
+      id: 2,
+      title: "Chandni Chowk Rice Miller's Business Growth Story",
+      description: "How a century-old family business expanded their customer base and achieved substantial revenue growth using Shudh's App...",
+      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      category: "Traditional Business"
+    },
+    {
+      id: 3,
+      title: "Small Kirana Store to Multi-Location Success",
+      description: "Watch how a single pan shop owner expanded to multiple locations and increased monthly revenue significantly using Shudh's inventory management...",
+      thumbnail: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=400&h=300&fit=crop",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      category: "Retail"
+    },
+    {
+      id: 4,
+      title: "How Our Micro-Merchant Delivers Better",
+      description: "Learn how Shudh's hyperlocal delivery model helps businesses reach customers faster, improving delivery speed and customer satisfaction...",
+      thumbnail: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=400&h=300&fit=crop",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      category: "Logistics"
+    },
+    {
+      id: 5,
+      title: "Electronics Distributor Digital Transformation",
+      description: "How a traditional electronics distributor modernized their operations and doubled their revenue using Shudh's platform...",
+      thumbnail: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?w=400&h=300&fit=crop",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      category: "Electronics"
+    },
+    {
+      id: 6,
+      title: "Textile Manufacturer's Export Journey",
+      description: "Watch how a local textile manufacturer started exporting internationally using Shudh's B2B connections...",
+      thumbnail: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=400&h=300&fit=crop",
+      videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      category: "Manufacturing"
+    }
+  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -119,85 +179,92 @@ const Index = () => {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-              <div className="relative h-48 bg-gradient-to-br from-blue-100 to-blue-200">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Potato Traders Story" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-0 h-0 border-l-[8px] border-l-gray-700 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
+          {/* Video Carousel */}
+          <div className="relative">
+            <div className="overflow-x-auto scrollbar-hide">
+              <div className="flex space-x-6 pb-4" style={{ width: 'max-content' }}>
+                {videos.map((video, index) => (
+                  <div 
+                    key={video.id}
+                    className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group cursor-pointer flex-shrink-0"
+                    style={{ width: '320px' }}
+                    onClick={() => openVideoModal(video)}
+                  >
+                    <div className="relative h-48">
+                      <img 
+                        src={video.thumbnail}
+                        alt={video.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-black/30 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <div className="w-0 h-0 border-l-[12px] border-l-white border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent ml-1"></div>
+                        </div>
+                      </div>
+                      <div className="absolute top-4 left-4">
+                        <span className="bg-red-600 text-white px-2 py-1 rounded text-xs font-semibold">
+                          {video.category}
+                        </span>
+                      </div>
+                      <div className="absolute bottom-4 right-4">
+                        <span className="bg-black/70 text-white px-2 py-1 rounded text-xs">
+                          ▶ Video
+                        </span>
+                      </div>
+                    </div>
+                    <div className="p-6">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2 line-clamp-2">"{video.title}"</h3>
+                      <p className="text-gray-600 text-sm line-clamp-3">{video.description}</p>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">"How Potato Traders Scaled to National Wholesale"</h3>
-                <p className="text-gray-600 text-sm">Learn how local potato traders expanded their customer base and achieved national reach using Shudh's marketplace...</p>
+                ))}
               </div>
             </div>
-
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-200">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Rice Miller Story" 
-                  className="w-full h-full object-cover"
+            
+            {/* Scroll indicators */}
+            <div className="flex justify-center mt-6 space-x-2">
+              {[0, 1, 2, 3].map((index) => (
+                <div
+                  key={index}
+                  className={`w-2 h-2 rounded-full ${
+                    index === 0 ? 'bg-blue-600' : 'bg-gray-300'
+                  }`}
                 />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-0 h-0 border-l-[8px] border-l-gray-700 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">"Chandni Chowk Rice Miller's Business Growth Story"</h3>
-                <p className="text-gray-600 text-sm">How a century-old family business expanded their customer base and achieved substantial revenue growth using Shudh's App...</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-              <div className="relative h-48 bg-gradient-to-br from-green-100 to-green-200">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Kirana Store Story" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-0 h-0 border-l-[8px] border-l-gray-700 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">"Small Kirana Store to Multi-Location Success"</h3>
-                <p className="text-gray-600 text-sm">Watch how a single pan shop owner expanded to multiple locations and increased monthly revenue significantly using Shudh's inventory management...</p>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-              <div className="relative h-48 bg-gradient-to-br from-red-100 to-red-200">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Micro Merchant Story" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <div className="w-0 h-0 border-l-[8px] border-l-gray-700 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-gray-800 mb-2">"How Our Micro-Merchant Delivers Better"</h3>
-                <p className="text-gray-600 text-sm">Learn how Shudh's hyperlocal delivery model helps businesses reach customers faster, improving delivery speed and customer satisfaction...</p>
-              </div>
+              ))}
             </div>
           </div>
         </div>
       </section>
+
+      {/* Video Modal */}
+      {selectedVideo && (
+        <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
+          <div className="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
+            <div className="flex justify-between items-center p-4 border-b">
+              <h3 className="text-xl font-semibold text-gray-800">{selectedVideo.title}</h3>
+              <button
+                onClick={closeVideoModal}
+                className="text-gray-500 hover:text-gray-700 text-2xl font-bold"
+              >
+                ×
+              </button>
+            </div>
+            <div className="aspect-video">
+              <iframe
+                src={selectedVideo.videoUrl}
+                title={selectedVideo.title}
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+            <div className="p-4">
+              <p className="text-gray-600">{selectedVideo.description}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Red Hero Section */}
       <section className="py-20 bg-gradient-to-r from-red-500 to-red-600">
