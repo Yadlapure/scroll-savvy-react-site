@@ -106,6 +106,158 @@ const Index = () => {
         )}
       </header>
 
+      {/* Trusted by Millions Section */}
+      <section className="pt-24 pb-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">Trusted by Millions of Small Businesses Across Bharat</h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto">
+              From kiranas and chemists to hotels and offices - Shudh is the growth partner for Bharat's small businesses
+            </p>
+            <div className="mt-8">
+              <span className="text-blue-600 cursor-pointer hover:underline">Swipe to see more stories →</span>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+              <div className="relative h-48 bg-gradient-to-br from-blue-100 to-blue-200">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Potato Traders Story" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-0 h-0 border-l-[8px] border-l-gray-700 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">"How Potato Traders Scaled to National Wholesale"</h3>
+                <p className="text-gray-600 text-sm">Learn how local potato traders expanded their customer base and achieved national reach using Shudh's marketplace...</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+              <div className="relative h-48 bg-gradient-to-br from-orange-100 to-orange-200">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Rice Miller Story" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-0 h-0 border-l-[8px] border-l-gray-700 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">"Chandni Chowk Rice Miller's Business Growth Story"</h3>
+                <p className="text-gray-600 text-sm">How a century-old family business expanded their customer base and achieved substantial revenue growth using Shudh's App...</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+              <div className="relative h-48 bg-gradient-to-br from-green-100 to-green-200">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Kirana Store Story" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-0 h-0 border-l-[8px] border-l-gray-700 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">"Small Kirana Store to Multi-Location Success"</h3>
+                <p className="text-gray-600 text-sm">Watch how a single pan shop owner expanded to multiple locations and increased monthly revenue significantly using Shudh's inventory management...</p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
+              <div className="relative h-48 bg-gradient-to-br from-red-100 to-red-200">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Micro Merchant Story" 
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                  <div className="w-12 h-12 bg-white/90 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="w-0 h-0 border-l-[8px] border-l-gray-700 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent ml-1"></div>
+                  </div>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">"How Our Micro-Merchant Delivers Better"</h3>
+                <p className="text-gray-600 text-sm">Learn how Shudh's hyperlocal delivery model helps businesses reach customers faster, improving delivery speed and customer satisfaction...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Red Hero Section */}
+      <section className="py-20 bg-gradient-to-r from-red-500 to-red-600">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-8">
+              <div className="space-y-6">
+                <h2 className="text-4xl md:text-5xl font-bold text-white leading-tight">
+                  India's Largest eB2B Platform for Small Businesses Owners
+                </h2>
+                <p className="text-xl text-red-100 leading-relaxed">
+                  Order a wide range of high-quality products, trusted brands, and seamless delivery — all in one platform.
+                </p>
+              </div>
+
+              <button className="bg-white text-red-600 px-8 py-4 rounded-lg font-bold text-lg hover:bg-red-50 transition-all duration-300 transform hover:scale-105 shadow-lg">
+                Register Today!
+              </button>
+            </div>
+
+            <div className="relative">
+              <div className="grid grid-cols-2 gap-4">
+                <div className="space-y-4">
+                  <div className="bg-white rounded-xl p-4 shadow-lg transform rotate-2 hover:rotate-0 transition-transform duration-300">
+                    <img 
+                      src="/placeholder.svg" 
+                      alt="Mobile App Interface 1" 
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
+                  </div>
+                  <div className="bg-white rounded-xl p-4 shadow-lg transform -rotate-1 hover:rotate-0 transition-transform duration-300">
+                    <img 
+                      src="/placeholder.svg" 
+                      alt="Mobile App Interface 2" 
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
+                  </div>
+                </div>
+                <div className="space-y-4 mt-8">
+                  <div className="bg-white rounded-xl p-4 shadow-lg transform -rotate-2 hover:rotate-0 transition-transform duration-300">
+                    <img 
+                      src="/placeholder.svg" 
+                      alt="Mobile App Interface 3" 
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
+                  </div>
+                  <div className="bg-white rounded-xl p-4 shadow-lg transform rotate-1 hover:rotate-0 transition-transform duration-300">
+                    <img 
+                      src="/placeholder.svg" 
+                      alt="Mobile App Interface 4" 
+                      className="w-full h-32 object-cover rounded-lg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Hero Section */}
       <section className="pt-24 pb-16 bg-gradient-to-br from-green-50 via-white to-blue-50">
         <div className="container mx-auto px-4">
